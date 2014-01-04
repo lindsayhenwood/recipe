@@ -4,29 +4,25 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
-	$("#li").click(function(){
-		addCheckbox($('Ingredients').val());
+	$('img.mountainbowl').click(function(){
+		$(this).hide('slow');
 	});
-});
-
-function addCheckbox('Ingredients'){
-	var container = $("#li"),
-	var inputs = container.find('input');
-	var id = inputs.length+1;
-
-	$('<input/>', {type: 'checkbox', id: 'cb'+id, value: name}).appendTo(container);
-	$)'<label/>', {'for': 'cb'+id, text: name})appendTo(container);
+	$('img.mountainbowlcore').click(function(){
+		$(this).hide('slow');
+	});
+	$('img.dressing').click(function(){
+		$(this).hide('slow');
+	});
 });
 
 $(document).ready(function(){
-	$('img.mountainbowl').mouseenter(function(){
-		$(this).hide('slow', 1);
-	});
-	$('img.mountainbowlcore').mouseenter(function(){
-		$(this).hide('slow', 1);
-	});
-	$('img.dressing').mouseenter(function(){
-		$(this).hide('slow', 1);
+	$('#Ingredients1').click(function (event) {
+		var property = $(event.target).css("text-decoration");
+		if (property === 'none solid rgb(0, 0, 0)')
+			$(event.target).css('text-decoration', 'line-through');
+		else
+			$(event.target).css('text-decoration', '');
+			
 	});
 });
 
